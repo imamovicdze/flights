@@ -35,8 +35,9 @@ import {FlightState} from "@/interface/FlightState";
       if (!value) return ''
       const hours = Math.floor(parseInt(value) / 60)
       const minutes = parseInt(value) % 60
-      const days = Math.floor(hours / 24) > 0 ? `${Math.floor(hours / 24)}d ${hours % 24}h` :  `${hours}h`
-      return `${days}  ${minutes}m`
+      const days = Math.floor(hours / 24)
+      const daysHours = days > 0 ? `${days}d ${hours % 24}h` :  `${hours > 0 ? `${hours}h` : ''}`
+      return `${daysHours}  ${minutes > 0 ? `${minutes}m` : ``}`
     }
   }
 })
