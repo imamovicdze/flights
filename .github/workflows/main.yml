@@ -9,7 +9,7 @@ on:
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  # workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,22 +24,16 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Build project 
       - uses: actions/setup-node@v2
         with:
           node-version: '12'
       - run: npm install
       - run: npm run build
-      - run: ls
 
       - name: Publish to surge.sh
         uses: dswistowski/surge-sh-action@v1.0.1
         with:
-          # your surge.sh domain to deploy
           domain: 'imamovic-dzenan.surge.sh'
-          # surge.sh login
           login: ${{secrets.EMAIL}} 
-          # surge.sh token, generate it with `surge token` command
           token: ${{secrets.TOKEN}} 
-          # your project path
           project: './dist/'
