@@ -5,7 +5,7 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development, loads server on [localy](http://localhost:8081) or you can check it out on [web](https://imamovic-dzenan.surge.sh/#/)
+### Compiles and hot-reloads for development, loads server on [localy](http://localhost:8080) or you can check it out on [web](https://imamovic-dzenan.surge.sh/#/)
 ```
 npm run serve
 ```
